@@ -20,6 +20,7 @@ import ajia.example.CachePreFetcher;
 import ajia.example.ProjectSaver;
 
 public class Main {
+
     public static void main(String[] args) {
         CachePreFetcher.fetch();
         ProjectSaver.backupSave();
