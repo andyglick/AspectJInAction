@@ -4,4 +4,6 @@
 
 **/classes/
 
+*.iml
+
 target/
