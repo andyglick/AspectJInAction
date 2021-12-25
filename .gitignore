@@ -1,5 +1,7 @@
 /.idea/sonarlint/issuestore/index.pb
-/.idea/
+.idea/
 *.class
 
-**/target/
+**/classes/
+
+target/
