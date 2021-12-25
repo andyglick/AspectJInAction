@@ -10,7 +10,7 @@
    </parent>
    <artifactId>common-aspectj</artifactId>
    <version>1.0-SNAPSHOT</version>
-   <name>AJIA Common POM</name>
+   <name>AJIA Common AspectJ POM</name>
    <packaging>pom</packaging>
    <build>
       <plugins>

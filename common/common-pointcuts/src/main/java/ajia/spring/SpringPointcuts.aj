@@ -16,14 +16,17 @@ limitations under the License.
 package ajia.spring;
 
 import org.springframework.jdbc.core.JdbcOperations;
-import org.springframework.jdbc.core.simple.SimpleJdbcOperations;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 public aspect SpringPointcuts {
     public pointcut jdbcTemplateCall()
         : call(* JdbcOperations+.*(..))
-        || call(* SimpleJdbcOperations+.*(..));
+        || call(* SimpleJdbcCall+.*(..))
+        || call(* SimpleJdbcInsert+.*(..));
 
     public pointcut jdbcTemplateExecution()
-        : execution(* JdbcOperations+.*(..))
-        || execution(* SimpleJdbcOperations+.*(..));
+        : call(* JdbcOperations+.*(..))
+        || call(* SimpleJdbcCall+.*(..))
+        || call(* SimpleJdbcInsert+.*(..));
 }
