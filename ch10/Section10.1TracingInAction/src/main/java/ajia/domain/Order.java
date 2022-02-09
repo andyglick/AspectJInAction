@@ -27,14 +27,12 @@ import javax.persistence.Table;
 
 import ajia.util.DomainEntity;
 
-//import ...
-
 @Entity
 @Table(name="orders")
 public class Order extends DomainEntity {
     @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, 
                mappedBy="order")
-    private Collection<LineItem> lineItems = new ArrayList<LineItem>();
+    private Collection<LineItem> lineItems = new ArrayList<>();
     private boolean placed;
 
     public void addProduct(Product product, int quantity) {
@@ -89,9 +87,10 @@ public class Order extends DomainEntity {
     }
 
     public Collection<LineItem> getLineItems() {
-        return new ArrayList<LineItem>(lineItems);
+        return new ArrayList<>(lineItems);
     }
 
+    @SuppressWarnings("unused")
     public double getTotalPrice() {
         double totalPrice = 0;
         for (LineItem lineItem : getLineItems()) {

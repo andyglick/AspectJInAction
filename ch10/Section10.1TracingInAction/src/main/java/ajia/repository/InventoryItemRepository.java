@@ -20,8 +20,6 @@ import ajia.domain.InventoryItem;
 import ajia.domain.Product;
 import ajia.util.GenericRepository;
 
-//import ...
-
 public interface InventoryItemRepository extends GenericRepository<InventoryItem> {
-    public InventoryItem findByProduct(Product product);
+    InventoryItem findByProduct(Product product);
 }

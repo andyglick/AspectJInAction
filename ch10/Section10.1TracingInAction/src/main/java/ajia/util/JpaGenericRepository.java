@@ -22,8 +22,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-//import ...
-
 public class JpaGenericRepository<T extends DomainEntity> 
     implements GenericRepository<T> {
 

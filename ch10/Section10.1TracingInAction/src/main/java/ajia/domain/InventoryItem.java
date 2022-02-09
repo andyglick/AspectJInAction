@@ -22,15 +22,13 @@ import javax.persistence.Table;
 
 import ajia.util.DomainEntity;
 
-//import ...
-
 @Entity
 @Table(name="inventoryItems")
 public class InventoryItem extends DomainEntity {
     private @OneToOne Product product;
     private int quantityOnHand;
 
-    private InventoryItem() {
+    public InventoryItem() {
     }
     
     public InventoryItem(Product product) {

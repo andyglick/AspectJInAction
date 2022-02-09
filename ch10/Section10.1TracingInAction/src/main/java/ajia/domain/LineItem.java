@@ -23,8 +23,6 @@ import javax.persistence.Table;
 
 import ajia.util.DomainEntity;
 
-//import ...
-
 @Entity
 @Table(name="lineItems")
 public class LineItem extends DomainEntity {
@@ -37,7 +35,7 @@ public class LineItem extends DomainEntity {
     private int quantity;
     private double unitPrice;
 
-    private LineItem() {
+    public LineItem() {
     }
 
     public LineItem(Order order, Product product, int quantity) {

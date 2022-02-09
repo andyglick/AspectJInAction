@@ -26,8 +26,6 @@ import ajia.domain.Product;
 import ajia.repository.InventoryItemRepository;
 import ajia.util.JpaGenericRepository;
 
-//import ...
-
 @Repository(value="inventoryItemRepository")
 public class JpaInventoryItemRepository 
         extends JpaGenericRepository<InventoryItem> 

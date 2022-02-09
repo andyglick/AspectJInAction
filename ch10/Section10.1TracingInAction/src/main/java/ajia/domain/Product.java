@@ -21,8 +21,6 @@ import javax.persistence.Table;
 
 import ajia.util.DomainEntity;
 
-//import ...
-
 @Entity
 @Table(name="products")
 public class Product extends DomainEntity {
@@ -77,16 +75,14 @@ public class Product extends DomainEntity {
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
+        } else if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
+
         Product other = (Product) obj;
-        if (name == other.name 
-           || (name != null && name.equals(other.name))) {
-            return true;
-        }
-        return false;
+
+        return name == other.name
+            || (name != null && name.equals(other.name));
     }
 
 }

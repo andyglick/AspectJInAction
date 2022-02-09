@@ -16,18 +16,18 @@ limitations under the License.
 //Listing 10.2 Tracing method entries
 package ajia.tracing;
 
-//import ...
-import org.apache.log4j.*;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.aspectj.lang.Signature;
 
 public aspect TraceAspect {
-    private Logger logger = Logger.getLogger(TraceAspect.class);
+    private static final Logger LOGGER = LogManager.getLogger(TraceAspect.class);
 
     pointcut traced()
 	: execution(* *.*(..)) && !within(TraceAspect);
 
     before() : traced() {
         Signature sig = thisJoinPointStaticPart.getSignature();
-        logger.log(Level.INFO, "Entering [" + sig.toShortString() + "]");
+        LOGGER.info("Entering [" + sig.toShortString() + "]");
     }
 }
